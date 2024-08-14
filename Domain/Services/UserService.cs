@@ -21,6 +21,11 @@ namespace Domain.Services
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Cria um novo usuário
+        /// </summary>
+        /// <param name="request">Dados do usuário</param>
+        /// <returns>Usuário criado</returns>
         public async Task<Try<List<NotificationBase>, User>> Create(UserRequest request)
         {
             try
@@ -41,6 +46,11 @@ namespace Domain.Services
             }
         }
 
+        /// <summary>
+        /// Deleta usuário
+        /// </summary>
+        /// <param name="id">Identificador do usuário</param>
+        /// <returns>Retona um boleano para o resultado da ação. true, excluído com sucesso e false para não excluído.</code></returns>
         public async Task<Try<List<NotificationBase>, bool>> Delete(string id)
         {
             try
@@ -60,6 +70,11 @@ namespace Domain.Services
             }
         }
 
+        /// <summary>
+        /// Consulta usuário pelo identificador.
+        /// </summary>
+        /// <param name="id">Identificador do usuário</param>
+        /// <returns>Usuário</returns>
         public async Task<Try<List<NotificationBase>, User>> Get(string id)
         {
             try
@@ -79,6 +94,12 @@ namespace Domain.Services
             }
         }
 
+        /// <summary>
+        /// Atualiza dados do usuário.
+        /// </summary>
+        /// <param name="request">Dados a serem atualizados</param>
+        /// <param name="id">Identificador do usuário</param>
+        /// <returns>Retorna usuário consultado</returns>
         public async Task<Try<List<NotificationBase>, User>> Update(UserRequest request, string id)
         {
             try

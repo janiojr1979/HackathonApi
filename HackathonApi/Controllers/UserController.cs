@@ -30,7 +30,13 @@ namespace HackathonApi.Controllers
         /// Endpoint para criação de usuário.
         /// </summary>
         /// <returns>Confirmação e dados do usuário criado</returns>
-        /// <example></example>
+        /// <param name="request">Dados do usuário</param>
+        /// <example>
+        /// {
+        ///     "name": "Paulo",
+        ///     "email": "teste@gmail.com"
+        /// }
+        /// </example>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResponseBase<User>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ResponseBase<User>))]
@@ -63,7 +69,7 @@ namespace HackathonApi.Controllers
         /// Endpoint para exclusão de usuário.
         /// </summary>
         /// <returns>Confirmação de exclusão</returns>
-        /// <example></example>
+        /// <param name="id">Identificador do usuário</param>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ResponseBase<User>))]
@@ -96,7 +102,7 @@ namespace HackathonApi.Controllers
         /// Endpoint para consulta de usuário.
         /// </summary>
         /// <returns>Retorna usuário</returns>
-        /// <example></example>
+        /// <param name="id">Identificador do usuário</param>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -129,8 +135,15 @@ namespace HackathonApi.Controllers
         /// <summary>
         /// Endpoint para criação de usuário.
         /// </summary>
-        /// <returns>Confirmação e dados do usuário criado</returns>
-        /// <example></example>
+        /// <returns>Confirmação e dados do usuário modificado</returns>
+        /// <param name="request">Dados do usuário</param>
+        /// <example>
+        /// {
+        ///     "name": "Paulo",
+        ///     "email": "teste@gmail.com"
+        /// }
+        /// </example>
+        /// <param name="id">Identificador do usuário</param>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResponseBase<User>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ResponseBase<User>))]
